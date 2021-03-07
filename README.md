@@ -1,7 +1,7 @@
 
 
 # TO DO
-[x]add key to markers
+- [x]add key to markers
 [x]landing page, add title and text to briefly describe what is this webapp
 [x]landing page, add links to major city (
     - Paris (48.85794302348206, 2.295087477518936)
