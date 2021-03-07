@@ -21,7 +21,7 @@ const MutationMarker = ({ mutation }) => {
           <b>{mutation.price} €</b>
           Sold the {mutation.dateMutation}
         </p>
-        <p># plan: {mutation.numero_plan}</p>
+        {/* <p># plan: {mutation.numero_plan}</p> */}
       </Popup>
       <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
         {mutation.price / 1000} K
