@@ -1,6 +1,5 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { HouseContext } from "../../context/GlobalState";
-
 //Styles
 import {
   SearchInput,
@@ -12,8 +11,10 @@ import {
 import { fetchAddress } from "../../api";
 
 const SearchBarContainer = ({ wrapperStyle }) => {
-  const { addressChosen, setAddressChosen } = useContext(HouseContext);
+  const { setAddressChosen } = useContext(HouseContext);
   const [addresses, setAddresses] = useState([]);
+  const focusPoint = useRef(null);
+
   const handleClick = (address) => {
     setAddressChosen(address);
   };
@@ -21,15 +22,24 @@ const SearchBarContainer = ({ wrapperStyle }) => {
     <div style={wrapperStyle}>
       <SearchInput
         placeholder="Enter a french address"
-        onChange={async (event) =>
-          setAddresses(await fetchAddress(event.target.value, 5))
-        }
-        // onKey
+        onBlur={(e) => {
+          e.relatedTarget !== focusPoint.current
+            ? setAddresses([])
+            : console.log();
+        }}
+        onChange={async (event) => {
+          setAddresses(await fetchAddress(event.target.value, 5));
+        }}
       />
-      <SuggestionContainer>
+      <SuggestionContainer tabIndex="0" ref={focusPoint}>
         {addresses.length > 0
           ? addresses.map((address) => (
-              <Suggestion key={address.id} onClick={() => handleClick(address)}>
+              <Suggestion
+                key={address.id}
+                onClick={(e) => {
+                  handleClick(address);
+                }}
+              >
                 {address.label}
               </Suggestion>
             ))

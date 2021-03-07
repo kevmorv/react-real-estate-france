@@ -5,6 +5,6 @@ export const SideBarContainer = styled.aside`
     top:10vh;
     right:-1vw;
     height:100vh;
-    background-color:rgb(97, 186, 158);
+    background-color:#a3b18a;
     width:33vw;
 `;

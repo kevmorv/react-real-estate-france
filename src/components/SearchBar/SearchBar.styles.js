@@ -32,9 +32,10 @@ export const Suggestion = styled.div`
   padding:15px;
   font-size: 20px;
   color:black;
+  background:white;
   border-top:1px solid #666;
   cursor:pointer;
   &:hover{
-   background: rebeccapurple;
+   background: #588157;
  }
 `

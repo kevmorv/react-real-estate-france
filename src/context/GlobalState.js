@@ -7,7 +7,7 @@ const GlobalState = (props) =>{
     const [houseMutation, setHouseMutation] = useState([])
     const [apptMutation, setApptMutation] = useState([])
     const [addressChosen, setAddressChosen] = useState({})
-    
+    const [visibleMutations, setVisibleMutations] = useState([])
 
     return (
         <HouseContext.Provider 
@@ -15,7 +15,9 @@ const GlobalState = (props) =>{
                 addressChosen:addressChosen,
                 setAddressChosen: setAddressChosen,
                 apptMutation:apptMutation,
-                setApptMutation:setApptMutation
+                setApptMutation:setApptMutation,
+                visibleMutations, 
+                setVisibleMutations
 
             }}
         >
