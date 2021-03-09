@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import BgImage from "../assets/images/Nanterre.jpg";
 
 
 export const Container = styled.div`
-  background-image: url(${BgImage});
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%C3%88ze_und_Cap_Ferrat-Grande_Corniche.jpg/1280px-%C3%88ze_und_Cap_Ferrat-Grande_Corniche.jpg);
   background-size: cover;
   height: 100vh;
 `

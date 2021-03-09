@@ -10,6 +10,8 @@
     Montpellier (43.60853, 3.88006)
 [x] loader icon
 
+
+[] create cluster yourself
 [] Clean the repo
 [] setMutations show only add already present ?
 [] add attribution to tile layer

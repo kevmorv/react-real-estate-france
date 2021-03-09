@@ -2,7 +2,7 @@ import React, {useState } from "react";
 
 import { GlobalStyle } from "./App.styles";
 import LandingPage from "./components/LandingPage";
-import Map from "./components/Map";
+import Map from "./components/Map/Map";
 import UpperBar from "./components/UpperBar";
 
 import GlobalState, { HouseContext } from "./context/GlobalState";

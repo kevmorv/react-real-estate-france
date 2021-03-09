@@ -1,4 +1,5 @@
 import { GeoJSON } from "leaflet";
+import uuid from 'react-uuid'
 
 export const fetchIris = async (address) => {
   const endpoint = `https://pyris.datajazz.io/api/coords?geojson=true&lat=${address.lat}&lon=${address.long}`;
@@ -47,6 +48,7 @@ export const fetchMutation = async (lat, long, type, dist) => {
         nbrePieces: String(x.properties["nombre_pieces_principales"]),
         address: `${x.properties["numero_voie"]} ${x.properties["type_voie"]} ${x.properties["voie"]} - ${x.properties["commune"]}`,
         numero_plan: x.properties["numero_plan"],
+        id:uuid()
       };
     });
     // const mySet = new Set(mutations)
